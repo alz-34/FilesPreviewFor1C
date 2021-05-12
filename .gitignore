@@ -1,0 +1,7 @@
+Lib
+Scripts
+pyvenv.cfg
+.vscode
+app/__pycache__/*
+app/static/Files/*
+app/static/ViewerJS/*

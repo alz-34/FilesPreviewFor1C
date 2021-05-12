@@ -1,0 +1,11 @@
+body {
+    background: #888;    
+}
+.container{
+    padding:5%;
+}
+.lead{
+    background:#888;
+    padding:4%;
+    color: #F2F2F2;
+}
