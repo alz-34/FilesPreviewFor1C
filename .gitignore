@@ -7,3 +7,4 @@ app/static/Files/*
 !app/static/Files/readme.txt
 app/static/ViewerJS/*
 !app/static/ViewerJS/readme.txt
+1c_client/src/ConfigDumpInfo.xml
