@@ -4,4 +4,6 @@ pyvenv.cfg
 .vscode
 app/__pycache__/*
 app/static/Files/*
+!app/static/Files/readme.txt
 app/static/ViewerJS/*
+!app/static/ViewerJS/readme.txt

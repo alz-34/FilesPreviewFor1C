@@ -1,0 +1,1 @@
+Files folder for preview. App stores all files here.
