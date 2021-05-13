@@ -7,7 +7,7 @@ class Converter:
         
         proc=None
         try:
-            proc=subprocess.run(['py', './Scripts/unoconv', *args], timeout=timeout)
+            proc=subprocess.run(['unoconv', *args], timeout=timeout)
         except subprocess.TimeoutExpired:            
             if '--listener' not in args:
                 raise            
