@@ -1,0 +1,12 @@
+version: "3.9"
+volumes:
+    filevolume01:
+services:
+  previewer_web_app:
+    build: PreviewerWebApp/
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - filevolume01:/app/static/Files
+  

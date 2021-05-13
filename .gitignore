@@ -2,9 +2,9 @@ Lib
 Scripts
 pyvenv.cfg
 .vscode
-app/__pycache__/*
-app/static/Files/*
-!app/static/Files/readme.txt
-app/static/ViewerJS/*
-!app/static/ViewerJS/readme.txt
-1c_client/src/ConfigDumpInfo.xml
+PreviewerWebApp/__pycache__/*
+PreviewerWebApp/static/Files/*
+!PreviewerWebApp/static/Files/readme.txt
+PreviewerWebApp/static/ViewerJS/*
+!PreviewerWebApp/static/ViewerJS/readme.txt
+1cApp/src/ConfigDumpInfo.xml
