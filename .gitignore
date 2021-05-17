@@ -8,3 +8,4 @@ PreviewerWebApp/static/Files/*
 PreviewerWebApp/static/ViewerJS/*
 !PreviewerWebApp/static/ViewerJS/readme.txt
 1cApp/src/ConfigDumpInfo.xml
+1cApp/bin
