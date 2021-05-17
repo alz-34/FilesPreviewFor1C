@@ -53,6 +53,6 @@ git clone https:/github.com/alz-34/FilesPreviewFor1C.git
 "C:\Program files\1cv8\8.3.18.1208\bin\1cv8" DESIGNER /WA- /DisableStartupDialogs /IBConnectionString File="%CD%/db" /CreateDistributionFiles -cffile "%CD%/1cv8.cf"
 ```
 
-Либо скачать артефакт из раздела с релизами.
+Либо скачать артефакт из раздела с [релизами](https://github.com/alz-34/FilesPreviewFor1C/releases).
 
 СF следует использовать как демо, либо интегрировать как подсистему в целевую систему на платформе 1С.
