@@ -28,7 +28,7 @@
 
 Установка с использованием [Docker](https://www.docker.com/):
 ```bash
-git clone https:/github.com/alz-34/FilesPreviewFor1C.git
+git clone https://github.com/alz-34/FilesPreviewFor1C.git .
 docker-compose up -d
 ```
 
