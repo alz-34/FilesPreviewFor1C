@@ -12,6 +12,6 @@ RUN apk --no-cache add git \
             ttf-liberation \        
         && rm -rf /var/cache/apk/* \
         && pip install -r requirements.txt \ 
-        && git clone https://github.com/webodf/ViewerJS.git .static/ViewerJS
+        && git clone https://github.com/webodf/ViewerJS.git ./static/ViewerJS
 EXPOSE 5000
 CMD ["flask", "run"] 
