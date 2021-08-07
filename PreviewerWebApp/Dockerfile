@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:rc-alpine3.12
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 WORKDIR /app
