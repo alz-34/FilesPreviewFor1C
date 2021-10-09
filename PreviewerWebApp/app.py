@@ -1,18 +1,24 @@
 from flask import Flask, render_template, request
 import os
 import tempfile
+import img2pdf
 from shutil import copyfile
 from converter import Converter
 
 THIS_FOLDER             = os.path.dirname(os.path.abspath(__file__))
 PREVIEW_FILES_STORAGE   = 'static/Files'
-ALLOWED_FROM_EXTENSIONS = {'docx', 'xlsx', 'pdf'}
+ALLOWED_FROM_EXTENSIONS = {'docx', 'xlsx', 'pdf', 'jpeg', 'jpg', 'png', 'tiff'}
 ALLOWED_TO_EXTENSIONS   = {'odt', 'ods', 'pdf'}
+IMG_SUPPORTED_EXT       = {'jpeg', 'jpg','png', 'tiff'}
 UNOCONV                 = Converter()
 CONV_MAP = {
     "docx": "odt pdf",
     "pdf": "pdf",
-    'xlsx': "ods pdf"
+    'xlsx': "ods pdf",
+    'jpeg': "pdf",
+    'jpg': "pdf",
+    'png': "pdf",
+    'tiff': "pdf"    
 }
 
 app = Flask(__name__)
@@ -78,7 +84,10 @@ def save_file(from_ext, to_ext):
         tmpFilename = newTmpFile.name
         rmTmpFile = False
         if from_ext != to_ext:
-            tmpFilename = convert_file(tmpFilename, to_ext)
+            if from_ext in IMG_SUPPORTED_EXT:
+                tmpFilename = convert_image_file(tmpFilename)                
+            else:
+                tmpFilename = convert_file(tmpFilename, to_ext)                
             rmTmpFile = True
         _newFilename = os.path.basename(tmpFilename)
         _dst = abspath_for_save_file(_newFilename)
@@ -91,17 +100,22 @@ def save_file(from_ext, to_ext):
 
 
 def convert_file(absPathToFile, to_ext):
-    UNOCONV.convert('-f', to_ext, absPathToFile)
-    
-    _basename = os.path.basename(absPathToFile)
-    _filename = os.path.splitext(_basename)[0]
-    
-    newFilename = f'{_filename}.{to_ext}'
-    dirName = os.path.dirname(absPathToFile)    
-    newAbsPath = os.path.join(dirName, newFilename)
-    
+    UNOCONV.convert('-f', to_ext, absPathToFile)    
+    return get_newAbsPathFromSourceAbsPath(absPathToFile, to_ext)
+
+def convert_image_file(absPathToFile):
+    newAbsPath = get_newAbsPathFromSourceAbsPath(absPathToFile, 'pdf')
+    with open(newAbsPath,"wb") as f:
+	        f.write(img2pdf.convert(absPathToFile))   
     return newAbsPath
 
+def get_newAbsPathFromSourceAbsPath(absPathToFile, outputExt):    
+    _basename = os.path.basename(absPathToFile)
+    _filename = os.path.splitext(_basename)[0]   
+    newFilename = f'{_filename}.{outputExt}'
+    dirName = os.path.dirname(absPathToFile)    
+    newAbsPath = os.path.join(dirName, newFilename)
+    return newAbsPath
 
 @ app.route('/delete/<ext>/<fname>')
 def delete_file(ext, fname):
