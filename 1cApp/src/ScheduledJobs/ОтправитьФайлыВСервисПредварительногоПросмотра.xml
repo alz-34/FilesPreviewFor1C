@@ -11,10 +11,10 @@
 			</Synonym>
 			<Comment/>
 			<MethodName>CommonModule.ПредварительныйПросмотрСервер.ОбработатьОчередьОтправкиФайлов</MethodName>
-			<Description/>
+			<Description>Отправить файлы в сервис предварительного просмотра</Description>
 			<Key/>
 			<Use>true</Use>
-			<Predefined>false</Predefined>
+			<Predefined>true</Predefined>
 			<RestartCountOnFailure>3</RestartCountOnFailure>
 			<RestartIntervalOnFailure>10</RestartIntervalOnFailure>
 		</Properties>

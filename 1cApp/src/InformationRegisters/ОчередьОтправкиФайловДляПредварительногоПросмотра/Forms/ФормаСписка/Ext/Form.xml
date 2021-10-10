@@ -112,6 +112,11 @@
 					<ContextMenu name="ЧислоПопытокКонтекстноеМеню" id="32"/>
 					<ExtendedTooltip name="ЧислоПопытокРасширеннаяПодсказка" id="33"/>
 				</LabelField>
+				<LabelField name="ОписаниеОшибки" id="36">
+					<DataPath>Список.ОписаниеОшибки</DataPath>
+					<ContextMenu name="ОписаниеОшибкиКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="ОписаниеОшибкиРасширеннаяПодсказка" id="38"/>
+				</LabelField>
 			</ChildItems>
 		</Table>
 	</ChildItems>
