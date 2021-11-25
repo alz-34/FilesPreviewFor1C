@@ -3,7 +3,6 @@ import subprocess
 class Converter:
 
     def run_unoconv(self, *args, timeout=None):
-        # return subprocess.run(["unoconv", *args], check=True)
         
         proc=None
         try:
